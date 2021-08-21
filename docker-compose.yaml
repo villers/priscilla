@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react-ui:
+    build:
+      context: ./my-vue-app
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./my-vue-app:/usr/src/app/my-vue-app
+      - /usr/src/app/my-vue-app/node_modules
+      - /usr/src/app/my-vue-app/dist
